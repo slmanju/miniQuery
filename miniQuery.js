@@ -49,11 +49,21 @@
         });
     };
 
+    // replace old class by new class
+    MiniQuery.fn.replaceClass = function (oldClass, newClass) {
+        return this.removeClass(oldClass).addClass(newClass);
+    };
+
     // on action performed
     MiniQuery.fn.on = function(name, handler) {
         return this.each(function() {
             this.addEventListener(name, handler, false);
         });
+    };
+
+    // add click event
+    MiniQuery.fn.click = function (handler) {
+        return this.on("click", handler);
     };
 
 }(window));
